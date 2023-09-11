@@ -1,5 +1,7 @@
 import '@styles/global.css';
-import { Children } from 'react';
+import Nav from '@components/Nav';
+import Provider from '@components/Provider';
+import { SessionProvider } from 'next-auth/react';
 
 export const metadata = {
   title: "आर्ज़  किया है।",
@@ -10,13 +12,17 @@ const RoolLayout = ({children}) => {
   return (
     <html >  {/* lang = 'en*/}
       <body>
-        <div className="main">
-          <div className='gradient' />
-        </div>
+        <Provider>
+          <div className="main">
+            <div className='gradient' />
+          </div>
 
-        <main className='app'>
-          {children}
-        </main>
+          <main className='app'>
+            <Nav/>
+            {children}
+          </main>
+        </Provider>
+        
       </body>
     </html>
   )
