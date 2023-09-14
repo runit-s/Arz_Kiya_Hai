@@ -1,7 +1,6 @@
-import Feed from "@components/feed"
+import Feed from "@components/Feed"
 
-const Home = () => {
-  return (
+const Home = () => (
     <section className="
       w-full
       flex-center
@@ -24,7 +23,7 @@ const Home = () => {
 
       <Feed />
     </section>
-  )
-}
+  
+);
 
-export default Home
+export default Home;
