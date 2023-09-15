@@ -19,25 +19,56 @@ const CardList = ({data, handleTagClick}) => {
 }
 
 const Feed = () => {
-  const [searchText, setSearchText] = useState('');
   const [allPosts, setAllPosts] = useState([])
 
-  const handleSearchChange = (e) => {
+  //For Search
+  const [searchText, setSearchText] = useState('');
+  const [searchTimeout, setSearchTimeout] = useState(null);
+  const [searchedResults, setSearchedResults] = useState([]);
 
-  }
-  
   useEffect(() => {
     const fetchPosts = async () => {
       const response = await fetch('/api/poem');
       const data = await response.json();
-  
+      
       setAllPosts(data);
     }
-
+    
     fetchPosts();
   }, []);
   
+  
+  //For Search
+  const filterPoems = (searchtext) => {
+    const regex = new RegExp(searchtext); 
+    return allPosts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) 
+    );
+  };
 
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
+
+    // debounce method
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResult = filterPoems(e.target.value);
+        setSearchedResults(searchResult);
+      }, 500)
+    );
+  };
+
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName);
+
+    const searchResult = filterPoems(tagName);
+    setSearchedResults(searchResult);
+  };
+  
+  
   return (
     <section className='feed'>
       <form className='relative w-full flex-center'>
@@ -51,10 +82,17 @@ const Feed = () => {
         />
       </form>
       
-      <CardList
-        data={allPosts}
-        handleTagClick={() => {}}
-      />
+      {searchedResults ? (
+        <CardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />
+      ) : (
+        <CardList
+          data={allPosts}
+          handleTagClick={handleTagClick}
+        />
+      )}
     </section>
   )
 }
