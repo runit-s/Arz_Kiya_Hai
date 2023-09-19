@@ -53,12 +53,8 @@ const Feed = () => {
     setSearchText(e.target.value);
 
     // debounce method
-    setSearchTimeout(
-      setTimeout(() => {
-        const searchResult = filterPoems(e.target.value);
-        setSearchedResults(searchResult);
-      }, 5000)
-    );
+    const searchResult = filterPoems(e.target.value);
+    setSearchedResults(searchResult);
   };
 
   const handleTagClick = (tagName) => {
