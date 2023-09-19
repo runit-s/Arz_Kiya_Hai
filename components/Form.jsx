@@ -4,11 +4,10 @@ const Form = ({ type ,post, setPost, submitting,  setSubmitting, handleSubmit}) 
   return (
     <section className=' w-full max-w-full flex-start flex-col '>
       <h1 className='head_text text-left'>
-        <span className='blue_gradient'>{type} Poem</span>            {/* to change */}
+        <span className='blue_gradient'>{type} </span>            {/* to change */}
       </h1>
       <p className='desc text-left max-w-md'>                       
-        {type} and share amazing prompts with the world, and          {/* to change */}
-        let your imagination run wild.                                {/* to change */}
+        {type} और मुक्त कीजिए अपने विचारों को।                                {/* to change */}
       </p>
 
       <form 
@@ -17,14 +16,14 @@ const Form = ({ type ,post, setPost, submitting,  setSubmitting, handleSubmit}) 
       >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'>
-            Your Poem                                                  {/* to change */}
+            आपकी कविता                                                {/* to change */}
           </span>                                 
 
           <textarea
             value={post.poem}
             onChange={(e) => setPost({ ...post,
             poem: e.target.value})}
-            placeholder='Write your poem here...'
+            placeholder='अपनी कविता यह लिखें...'
             required
             className='form_textarea'
           />
@@ -48,7 +47,7 @@ const Form = ({ type ,post, setPost, submitting,  setSubmitting, handleSubmit}) 
         
         <div className='flex-end mx-3 mb-5 gap-4 '>
               <Link href='/' className='text-grey-500 text-sm'>
-                Cancel
+                खारिज करे 
               </Link>
               <button
                 type='submit'

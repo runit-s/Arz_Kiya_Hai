@@ -6,19 +6,22 @@ const Home = () => (
       flex-center
       flex-col
     ">
-      <h1 className=" head_text text-center ">
-        Discover and Share                          {/*To change*/}
-        <br className="max-md:hidden " />
-        <span className="orange_gradient text-center ">     {/* to change  orange- diff colour */} 
-          AI-Powered Prompts                        {/* to change*/} 
-        </span>          
+      <h1 className=" head_text text-center whitespace-nowrap mb-4">
+        <span className="text-center " >     {/* to change  orange- diff colour */} 
+          खोजिए अपनी दुनिया,     {/* to change*/} 
+        </span>   
+        <br />
+                
+      </h1>
+      <h1>
+        <span className="head_text orange_gradient text-center" >     {/* to change  orange- diff colour */} 
+          अपनी कलम से।                        {/* to change*/} 
+        </span>  
       </h1>
       <p className="desc text-center  ">
-        An open-source poem writing platform,
-        for young and old,
-        for female and male,
-        for professionals and non-professionals,
-        for anyone who wants to write.
+        अपने अंदर छुपे कवि को बाहर निकालें, अपनी कलम के सहारे। 
+        <br />
+        और मिलिये कई छुपे कलाकारों से, उनकी कलम के सहारे। 
       </p>
 
       <Feed />

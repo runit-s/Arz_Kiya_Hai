@@ -43,7 +43,7 @@ const CreatePost = () => {
 
   return (
     <Form
-        type="Post"
+        type="नई कविता लिखे"
         post={post}
         setPost={setPost}
         submitting={submitting}

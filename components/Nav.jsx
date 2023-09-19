@@ -24,13 +24,13 @@ const Nav = () => {
     <nav className=" flex-between w-full mb-16 pt-3  ">
       <Link href="/" className="flex gap-2 flex-center">
         <Image
-          src="/assets/icons/quill.svg"                //To change
+          src="/assets/icons/quill.svg"               
           alt=" Arz Kiya hai "                   //To change
           width={40}
           height={40}
           className=" object-contain "
          />
-         <p className="logo_text">Kalam</p>
+         <p className="logo_text">कलम</p>
       </Link>
 
       
@@ -40,7 +40,7 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5 ">
             <Link href="/create-post" className="black_btn">
-              Create Post 
+              नई कविता लिखे  
             </Link>
 
             <button type="button" onClick={signOut} className="outline_btn">
@@ -94,14 +94,14 @@ const Nav = () => {
                         className="dropdown_link"
                         onClick={() => settoggleDropDown(false)}
                       >
-                        My Profile
+                        मेरी कविताएं 
                       </Link>
                       <Link 
                         href="/profile"
                         className="dropdown_link"
                         onClick={() => settoggleDropDown(false)}
                       >
-                        Create Prompt                                     {/* to change*/}
+                        नई कविता लिखे                                   {/* to change*/}
                       </Link>
                       <button
                         type="button"

@@ -30,7 +30,7 @@ const MyProfile = () => {
         router.push(`/update-poem?id=${post._id}`)
     }
     const handleDelete = async (post) => {
-      const hasConfirmed = confirm("Are you sure you want to delete this post?");
+      const hasConfirmed = confirm("क्या आप वाकई इस पोस्ट को हटाना चाहते हैं?");
 
       if(hasConfirmed) {
         try {
@@ -50,8 +50,8 @@ const MyProfile = () => {
 
   return (
     <Profile
-        name="My"
-        desc="Welcome to your personalized profile page"
+        name="आप"
+        desc="आपका कविता संग्रह। "
         data={posts}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
