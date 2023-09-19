@@ -57,7 +57,7 @@ const Feed = () => {
       setTimeout(() => {
         const searchResult = filterPoems(e.target.value);
         setSearchedResults(searchResult);
-      }, 500)
+      }, 5000)
     );
   };
 
