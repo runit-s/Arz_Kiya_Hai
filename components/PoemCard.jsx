@@ -67,7 +67,7 @@ const PoemCard = ({post, handleTagClick, handleEdit, handleDelete}) => {
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-grey-700">{post.poem}</p>
+      <p className="my-4 font-satoshi text-sm text-grey-700 poem-paragraph">{post.poem}</p>
       <p 
         className="font-inter text-sm blue_gradient cursor-pointer"
         onClick={() => handleTagClick && handleTagClick(post.tag)}    

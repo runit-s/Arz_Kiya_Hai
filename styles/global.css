@@ -166,3 +166,7 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.poem-paragraph {
+  white-space: pre-wrap;
+}
