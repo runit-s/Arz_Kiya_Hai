@@ -4,7 +4,7 @@ import Provider from '@components/Provider';
 import { SessionProvider } from 'next-auth/react';
 
 export const metadata = {
-  title: "आर्ज़  किया है।",
+  title: "अर्ज़ किया है।",
   description: "एक नई शुरुआत, आपके अंदर के कलाकार के लिए।"
 }
 
