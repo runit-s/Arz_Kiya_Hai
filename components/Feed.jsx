@@ -57,7 +57,7 @@ const Feed = () => {
       setTimeout(() => {
         const searchResult = filterPoems(e.target.value);
         setSearchedResults(searchResult);
-      }, 1000)
+      }, 500)
     );
   };
 
@@ -82,9 +82,17 @@ const Feed = () => {
         />
       </form>
       
-      <CardList
+      {(searchText === '') ? (
+        <CardList
           data={allPosts}
+          handleTagClick={handleTagClick}
         />
+      ) : (
+        <CardList
+          data={searchedResults}
+          handleTagClick={handleTagClick}
+        />
+      )}
     </section>
   )
 }
