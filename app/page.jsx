@@ -6,7 +6,7 @@ const Home = () => (
       flex-center
       flex-col
     ">
-      <h1 className=" head_text text-center whitespace-nowrap mb-4">
+      <h1 className=" head_text text-center mb-4">
         <span className="text-center " >     {/* to change  orange- diff colour */} 
           खोजिए अपनी दुनिया,     {/* to change*/} 
         </span>   

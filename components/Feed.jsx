@@ -38,40 +38,40 @@ const Feed = () => {
   }, []);
   
   
-  //For Search
-  // const filterPoems = (searchtext) => {
-  //   const regex = new RegExp(searchtext); 
-  //   return allPosts.filter(
-  //     (item) =>
-  //       regex.test(item.creator.username) ||
-  //       regex.test(item.tag) 
-  //   );
-  // };
+  // For Search
+  const filterPoems = (searchtext) => {
+    const regex = new RegExp(searchtext); 
+    return allPosts.filter(
+      (item) =>
+        regex.test(item.creator.username) ||
+        regex.test(item.tag) 
+    );
+  };
 
-  // const handleSearchChange = (e) => {
-  //   clearTimeout(searchTimeout);
-  //   setSearchText(e.target.value);
+  const handleSearchChange = (e) => {
+    clearTimeout(searchTimeout);
+    setSearchText(e.target.value);
 
-  //   // debounce method
-  //   setSearchTimeout(
-  //     setTimeout(() => {
-  //       const searchResult = filterPoems(e.target.value);
-  //       setSearchedResults(searchResult);
-  //     }, 5000)
-  //   );
-  // };
+    // debounce method
+    setSearchTimeout(
+      setTimeout(() => {
+        const searchResult = filterPoems(e.target.value);
+        setSearchedResults(searchResult);
+      }, 1000)
+    );
+  };
 
-  // const handleTagClick = (tagName) => {
-  //   setSearchText(tagName);
+  const handleTagClick = (tagName) => {
+    setSearchText(tagName);
 
-  //   const searchResult = filterPoems(tagName);
-  //   setSearchedResults(searchResult);
-  // };
+    const searchResult = filterPoems(tagName);
+    setSearchedResults(searchResult);
+  };
   
   
   return (
     <section className='feed'>
-      {/* <form className='relative w-full flex-center'>
+      <form className='relative w-full flex-center'>
         <input
           type='text'
           placeholder='नाम या tag से ढूँढे...'
@@ -80,7 +80,7 @@ const Feed = () => {
           required
           className='search_input peer'
         />
-      </form> */}
+      </form>
       
       <CardList
           data={allPosts}

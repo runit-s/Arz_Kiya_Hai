@@ -97,7 +97,7 @@ const Nav = () => {
                         मेरी कविताएं 
                       </Link>
                       <Link 
-                        href="/profile"
+                        href="/create-post"
                         className="dropdown_link"
                         onClick={() => settoggleDropDown(false)}
                       >
