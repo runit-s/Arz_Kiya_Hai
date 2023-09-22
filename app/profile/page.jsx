@@ -23,7 +23,7 @@ const MyProfile = () => {
         }
     
         if(session?.user.id)fetchPosts();
-      }, []);
+      }, [session]);
 
 
     const handleEdit = (post) => {
@@ -53,7 +53,6 @@ const MyProfile = () => {
         name="आप"
         desc="आपका कविता संग्रह। "
         data={posts}
-        handleEdit={handleEdit}
         handleDelete={handleDelete}
     />
   )
