@@ -11,7 +11,7 @@ export const GET = async (request, {params}) => {
 
         return new Response(JSON.stringify(poem), {status: 200})
     } catch (error) {
-        return new Response("Failed to load all poems", {status: 200})
+        return new Response("Failed to load all poems", {status: 500})
     }
 }
 
